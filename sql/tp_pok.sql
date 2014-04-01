@@ -32,8 +32,9 @@ CREATE TABLE Especes
 
 CREATE TABLE TypesPokemon
 (
-	idPokedex INT NOT NULL PRIMARY KEY,
-	idType INT  NOT NULL REFERENCES Types (idType)
+	idPokedex INT NOT NULL,
+	idType INT  NOT NULL REFERENCES Types (idType),
+	PRIMARY KEY (idPokedex, idType)
 );
 
 INSERT INTO Pokedex (idPokedex, Nom, Taille, Poids, Legendaire,
@@ -42,7 +43,7 @@ INSERT INTO Pokedex (idPokedex, Nom, Taille, Poids, Legendaire,
   ('4', 'Salameche', '0.6', '8.5', false, 'Flammèche', '39', '1'),
   ('6', 'Dracaufeu', '1.7', '90.5', false, 'Deflagration', '78', '1'),
   ('25', 'Pikachu', '0.4', '6', false, 'Tonnerre', 35, 2),
-  ('144', 'artikodin', '1.7', '55.4', true, 'Laser Glace', '90', '3'),
+  ('144', 'Artikodin', '1.7', '55.4', true, 'Laser Glace', '90', '3'),
   ('150', 'Mewtwo', '2', '122', true, 'Psyko', '106', '4'),
   ('132', 'Metamorph', '0.3', '4', false, 'Morphing', '48', '5'),
   ('146', 'Sulfura', '2', '60', true, 'Déflagration', '90', '1'),
@@ -57,10 +58,37 @@ INSERT INTO Pokedex (idPokedex, Nom, Taille, Poids, Legendaire,
   ('151', 'Mew', '0.4', '4', true, 'Psyko', '100', '16'),
   ('9', 'Tortank', '1.6', '85.5', false, 'hydrocanon', '79', '6'),
   ('8', 'Carabaffe', '1', '22.5', false, 'tour rapide', '59', '6'),
-  ('1', 'Bulbizarre', '0.7', '6.9', false, 'Vampigraine', '45', '7'),
   ('59', 'Arcanin', '1.9', '155', false, 'Vit. Extreme', '90', '15'),
   ('57', 'Colossinge', '1', '32', false, 'Frappe Atlas', '65', '14'),
-  ('16', 'roucoul', '0.3', '1.8', false, 'jet de sable', '40', '13');
+  ('16', 'Roucool', '0.3', '1.8', false, 'jet de sable', '40', '13');
+
+INSERT INTO Pokemon (idNumero, idPokedex, Niveau, Surnom)
+  VALUES
+  ('1', '4', '34', 'Salamèche'),
+  ('2', '6', '79', 'Dracaufeu'),
+  ('3', '25', '49', 'Pikachu'),
+  ('4', '144', '28', 'artikodin'),
+  ('5', '150', '99', 'Mewtwo'),
+  ('6', '132', '45', 'Metamorph'),
+  ('7', '146', '39', 'Sulfura'),
+  ('8', '7', '28', 'Carapuce'),
+  ('9', '1', '42', 'Bulbizarre'),
+  ('10', '58', '49', 'Caninos'),
+  ('11', '128', '86', 'Tauros'),
+  ('12', '56', '53', 'Ferosinge'),
+  ('13', '95', '23', 'Onix'),
+  ('14', '97', '23', 'Hypnomade'),
+  ('15', '145', '54', 'Electhor'),
+  ('16', '151', '65', 'Mew'),
+  ('17', '9', '76', 'Tortank'),
+  ('18', '8', '32', 'Carabaffe'),
+  ('19', '59', '54', 'Arcanin'),
+  ('20', '57', '34', 'Colossinge'),
+  ('21', '16', '86', 'roucool'),
+  ('22', '16', '46', 'roucool'),
+  ('23', '1', '32', 'Bulbizarre'),
+  ('24', '6', '87', 'Dracaufeu'),
+  ('25', '25', '38', 'Pikachu');
 
 INSERT INTO Types (idType, PokeType)
   VALUES

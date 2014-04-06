@@ -8,9 +8,14 @@
 	<body>
 		<div id="header">
 			<div id="titre">
-				<h1>liste de pokemons</h1>
+				<h1>PC de Léo</h1>
 			</div>
 			<div id="recherche">
+				<form id="search" method="post">
+					<input class="barre" name="name" type="text" placeholder="nom du pokémon" required /></br>
+					<input class="barre" name="type" type="text" placeholder="nom du type" required /></br>
+					<input class="bouton" type="submit" value="rechercher" />
+				</form>
 			</div>
 		</div>
 		<div id="content">

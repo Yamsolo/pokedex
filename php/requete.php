@@ -1,16 +1,14 @@
 <?php
-    $sql_ = ''; // requête sql
-
-    $req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br
-    />'.mysql_error());
-
-    /* doing things */
-
-    while ($data = mysql_fetch_array($req))
-      { // on affiche les résultats
-        echo 'Nom : '.$data['nom'].'<br />';
-        echo 'Son tél : '.$data['telephone'].'<br /><br />';
-      }
-
-    mysql_free_result ($req); // libération de la mémoire pour $req
+	include("connexion.php");
+	mysql_select_db($login, $link) or die("Impossible de selectionner la base de donnée");
+	$query = mysql_query("SELECT * FROM pokedex");
+	while($tab = mysql_fetch_array($query))
+	{
+			
+		echo "<tr class='ligne'>
+				<td>".$tab['Nom']."</td>
+				<td>".$tab['Niveau']."</td>
+				<td>".$tab['espece']."</td>
+			</tr>";
+	}
 ?>

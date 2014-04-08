@@ -1,3 +1,4 @@
 <?php
-    mysql_close($link);
+	include("connexion.php");
+	mysql_close($link);
 ?>

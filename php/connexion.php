@@ -1,5 +1,5 @@
 <?php
-	include(../config.php);
+	include("../config.php");
 	$link = mysql_connect("localhost", "$login", "$password") or die("Impossible de se connecter à la base");
 	mysql_select_db("pokedex", $link) or die("Impossible de selectionner la base de donnée");
 	$query = mysql_query("SELECT * FROM pokedex");

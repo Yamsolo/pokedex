@@ -27,12 +27,12 @@
 					<th>Nom</th>
 						<th>Niveau</th>
 					<th>Espèce</th>
-					<!--<th>Types</th>
+					<th>Types</th>
 					<th>Taille</th>
 					<th>Poids</th>
 					<th>Légendaire</th>
 					<th>Attaque signature</th>
-					<th>PV</th> !-->
+					<th>PV</th>
 				</tr>
 				</thead>
             			<tbody>

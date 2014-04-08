@@ -5,8 +5,19 @@ html, body {
     padding: 0;
 }
 @font-face{
-	font-family : "poketitre";
+	font-family : "pokevide";
     src : url('Pokemon\ Hollow.ttf');
+    font-style:normal;
+}
+@font-face{
+	font-family : "poketitre";
+    src : url('Pokemon\ Solid.ttf');
+    font-style:plain;
+}
+@font-face{
+	font-family : "pokegb";
+    src : url('Pokemon\ GB.ttf');
+    font-style:gb;
 }
 body {
     background-color: #3D3D3D;
@@ -17,10 +28,12 @@ body {
     margin-left: 300px;
     text-align: center;
     width: 900px;
+    font-family: "pokegb", Helvetica, Arial, sans-serif;
+    font-size: 14px;
 }
 #main {
     color: #888888;
-    font-family: Arial,sans-serif;
+    font-family: "pokegb", Helvetica, Arial, sans-serif;
     font-size: 14px;
     margin: 4em auto;
     padding: 3em;
@@ -40,6 +53,7 @@ body {
 }
 .recherche {
 	font-family : "poketitre", Helvetica, Arial, sans-serif;
+	color: white;
  }
 
 .left {
@@ -78,4 +92,8 @@ a:hover {
     font-size: 1em;
     margin: 3em 0;
     text-align: center;
+}
+th {
+	font-family : "pokevide", Helvetica, Arial, sans-serif;
+	font-size: 20px;
 }

@@ -6,6 +6,7 @@
 		<meta charset="utf-8"/>
 	</head>
 	<body>
+	  <?php include("connexion.php") ?>
 		<div id="header">
 			<div id="titre">
 				<h1 class="recherche">PC de Léo</h1>
@@ -35,7 +36,7 @@
 				</tr>
 				</thead>
             			<tbody>
-					<?php include("connexion.php") ?>
+				  <?php include("requete.php"); ?>
             			</tbody>
 			</table>
 		</div>

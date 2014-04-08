@@ -1,5 +1,5 @@
 <?php
-	mysql_select_db($login, $link) or die("Impossible de selectionner la base de donnée");
+	mysql_select_db($database, $link) or die("Impossible de selectionner la base de donnée");
 	mysql_set_charset("utf8", $link);
 	$query = mysql_query("SELECT DISTINCT Surnom, Niveau, Espece, PokeType, Taille, Poids, Legendaire, AttaqueSpe, PV
 					FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes");

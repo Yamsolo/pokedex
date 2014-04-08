@@ -4,36 +4,34 @@ html, body {
     margin: 0;
     padding: 0;
 }
-@font-face{
-	font-family : "pokevide";
-    src : url('Pokemon\ Hollow.ttf');
-    font-style:normal;
+@font-face {
+    font-family: "pokevide";
+    font-style: normal;
+    src: url("PokemonHollow.ttf");
 }
-@font-face{
-	font-family : "poketitre";
-    src : url('Pokemon\ Solid.ttf');
-    font-style:plain;
+@font-face {
+    font-family: "poketitre";
+    src: url("PokemonSolid.ttf");
 }
-@font-face{
-	font-family : "pokegb";
-    src : url('Pokemon\ GB.ttf');
-    font-style:gb;
+@font-face {
+    font-family: "pokegb";
+    src: url("PokemonGB.ttf");
 }
 body {
     background-color: #3D3D3D;
     background-image: url("../images/back.jpg");
     background-position: left top;
     background-repeat: no-repeat;
+    font-family: "pokegb",Helvetica,Arial,sans-serif;
+    font-size: 18px;
     height: 1100px;
-    margin-left: 300px;
+    margin-left: 270px;
     text-align: center;
-    width: 900px;
-    font-family: "pokegb", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    width: 960px;
 }
 #main {
     color: #888888;
-    font-family: "pokegb", Helvetica, Arial, sans-serif;
+    font-family: "pokegb",Helvetica,Arial,sans-serif;
     font-size: 14px;
     margin: 4em auto;
     padding: 3em;
@@ -45,26 +43,43 @@ body {
 }
 #tableau {
     background: none repeat scroll 0 0 #D3D3D3;
-    width: 900px;
+    width: 960px;
 }
 #recherche {
     height: auto;
-    width: 256px;
+    display:block;
 }
 .recherche {
-	font-family : "poketitre", Helvetica, Arial, sans-serif;
-	color: white;
- }
-
-.left {
-    float: left;
-    margin-left: 1.6em;
-    width: 300px;
+    color: #FFFFFF;
+    font-family: "poketitre",Helvetica,Arial,sans-serif;
 }
-.right {
-    float: right;
-    text-align: left;
-    width: 360px;
+#recherche > #bloc_texte {
+	float:left;
+	width:470px;
+	display:inline-block;
+}
+#recherche > #bloc_check {
+	float:rigth;
+	width:470px;
+	display:inline-block;
+}
+div#avatar {
+	background-image: url(../images/leo.png);
+	background-repeat: no-repeat;
+	width: 150px;
+	height: 180px;
+	position:absolute;
+	left:295px;
+	top:241px;
+}
+div#bulle {
+	background-image: url(../images/bulle_base.jpg);
+	background-repeat: no-repeat;
+	width: 253px;
+	height: 72px;
+	position:absolute;
+	left:427px;
+	top:336px;
 }
 h1 {
     font-size: 2.6em;
@@ -94,6 +109,6 @@ a:hover {
     text-align: center;
 }
 th {
-	font-family : "pokevide", Helvetica, Arial, sans-serif;
-	font-size: 20px;
+    font-family: "pokevide",Helvetica,Arial,sans-serif;
+    font-size: 20px;
 }

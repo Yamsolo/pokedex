@@ -11,14 +11,39 @@
 			<div id="titre">
 				<h1 class="recherche">PC de Léo</h1>
 			</div>
+			<form id="search" method="post">
 			<div id="recherche">
-				<p class="recherche">Rechercher un pokémon</p>
-				<form id="search" method="post">
-					<input class="barre" name="name" type="text" placeholder="nom du pokémon" /></br>
-					<input class="barre" name="type" type="text" placeholder="nom du type" /></br>
-					<input class="bouton" type="submit" value="rechercher" />
-				</form>
+				
+				
+				<div id="bloc_texte">
+					<p class="recherche">Rechercher un pokémon</p>
+					
+						<input class="barre" name="name" type="text" placeholder="nom du pokémon" /></br>
+						<input class="barre" name="type" type="text" placeholder="nom du type" /></br>
+											
+				</div>
+				
+				<div id="bloc_check">
+					<p class="recherche">Options</p>
+					<div>
+						<input type="checkbox" value="true" id="check_legend" name="check_legend" />
+						<label for="squaredThree"></label>
+						restreindre aux légendaires
+					</div>
+					<div>
+						<input type="checkbox" value="true" id="check_legend" name="check_legend" />
+						<label for="squaredThree"></label>
+						restreindre aux légendaires
+					</div>
+				</div>
+				
+				
 			</div>
+			<input class="bouton" type="submit" value="rechercher" />
+			</form>
+			
+			<div id="avatar"></div>
+			<div id="bulle"></div>
 		</div>
 		<div id="content">
 			<table border=2 id="tableau">

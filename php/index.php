@@ -9,9 +9,9 @@
 	  <?php include("connexion.php") ?>
 		<div id="header">
 			<div id="titre">
-				<h1 class="recherche">PC de Léo</h1>
+				<h1 class="recherche"><a href="#">PC de Léo</a></h1>
 			</div>
-			<form id="search" method="post">
+			<form id="search" method="post" action="requete.php">
 			<div id="recherche">
 				
 				
@@ -30,11 +30,6 @@
 						<label for="squaredThree"></label>
 						restreindre aux légendaires
 					</div>
-					<div>
-						<input type="checkbox" value="true" id="check_legend" name="check_legend" />
-						<label for="squaredThree"></label>
-						restreindre aux légendaires
-					</div>
 				</div>
 				
 				
@@ -46,7 +41,7 @@
 			<div id="bulle"></div>
 		</div>
 		<div id="content">
-			<table border=2 id="tableau">
+			<table id="tableau">
 				<thead>
 					<tr class="ligne">
 					<th>Nom</th>
@@ -60,9 +55,9 @@
 					<th>PV</th>
 				</tr>
 				</thead>
-            			<tbody>
+            	<tbody>
 				  <?php include("requete.php"); ?>
-            			</tbody>
+            	</tbody>
 			</table>
 		</div>
         <?php include("close.php"); ?>

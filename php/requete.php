@@ -1,10 +1,31 @@
 <?php
 	mysql_select_db($database, $link) or die("Impossible de selectionner la base de donnée");
 	mysql_set_charset("utf8", $link);
+	$where = "WHERE ";
+	$count_where = 0;
+	if (isset($_POST['name']))
+		{
+			$where += "Surnom='".$_POST['name']."'";
+			$count_where++;
+		}
+	if (isset($_POST['type']))
+		{
+			$where += ($count_where == 0) ? "Type='".$_POST['type']."'" : " AND Type='".$_POST['type']."'";
+		}
+	if (isset($_POST['check_legend']) && ($_POST['check_legend'] == true))
+		{
+			$where += ($count_where == 0) ? "Legendaire=1" : " AND Legendaire=1";
+		}
+	if ($count_where == 0)
+		$where = "";
+	
 	$query = mysql_query("SELECT DISTINCT Surnom, Niveau, Espece, PokeType, Taille, Poids, Legendaire, AttaqueSpe, PV
-					FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes");
+						FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes
+						");
+	
 	while($tab = mysql_fetch_array($query))
 	{
+		$tab['Legendaire'] = ($tab['Legendaire'] == 1) ? "oui" : "non";
 		echo "<tr class='ligne'>
 				<td>".$tab['Surnom']."</td>
 				<td>".$tab['Niveau']."</td>

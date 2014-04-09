@@ -24,7 +24,7 @@ body {
     background-repeat: no-repeat;
     font-family: "pokegb",Helvetica,Arial,sans-serif;
     font-size: 18px;
-    height: 1100px;
+    height: auto;
     margin-left: 270px;
     text-align: center;
     width: 960px;
@@ -97,11 +97,8 @@ a {
     text-decoration: none;
 }
 a:visited {
-    color: #F0F0F0;
 }
 a:hover {
-    color: #9370DB;
-    text-decoration: underline;
 }
 .center {
     font-size: 1em;
@@ -111,4 +108,8 @@ a:hover {
 th {
     font-family: "pokevide",Helvetica,Arial,sans-serif;
     font-size: 20px;
+}
+tbody > tr:hover {
+	color: white;
+	background: grey;
 }

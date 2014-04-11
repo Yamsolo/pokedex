@@ -9,9 +9,10 @@
 	  <?php include("connexion.php") ?>
 		<div id="header">
 			<div id="titre">
-				<h1 class="recherche"><a href="#">PC de Léo</a></h1>
+				<h1 class="recherche"><a href="<?php echo $_SERVER['php_self'] ?>">PC de Léo</a></h1>
 			</div>
-			<form id="search" method="post" action="requete.php">
+			<div id="fond_recherche"></div>
+			<form id="search" method="post" action="">
 			<div id="recherche">
 				
 				
@@ -19,8 +20,7 @@
 					<p class="recherche">Rechercher un pokémon</p>
 					
 						<input class="barre" name="name" type="text" placeholder="nom du pokémon" /></br>
-						<input class="barre" name="type" type="text" placeholder="nom du type" /></br>
-											
+						
 				</div>
 				
 				<div id="bloc_check">
@@ -37,10 +37,10 @@
 			<input class="bouton" type="submit" value="rechercher" />
 			</form>
 			
-			<div id="avatar"></div>
-			<div id="bulle"></div>
 		</div>
 		<div id="content">
+			<div id="avatar"></div>
+			<div id="bulle"></div>
 			<table id="tableau">
 				<thead>
 					<tr class="ligne">

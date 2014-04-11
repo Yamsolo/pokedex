@@ -19,15 +19,15 @@
 	if ($count_where == 0)
 		$where = "";
 	
-	$query = mysql_query("SELECT DISTINCT Surnom, Niveau, Espece, PokeType, Taille, Poids, Legendaire, AttaqueSpe, PV
+	$query = mysql_query("SELECT DISTINCT Nom, Niveau, Espece, PokeType, Taille, Poids, Legendaire, AttaqueSpe, PV
 						FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes
-						");
+						$where");
 	
 	while($tab = mysql_fetch_array($query))
 	{
 		$tab['Legendaire'] = ($tab['Legendaire'] == 1) ? "oui" : "non";
 		echo "<tr class='ligne'>
-				<td>".$tab['Surnom']."</td>
+				<td>".$tab['Nom']."</td>
 				<td>".$tab['Niveau']."</td>
 				<td>".$tab['Espece']."</td>
 				<td>".$tab['PokeType']."</td>

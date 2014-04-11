@@ -20,12 +20,13 @@ html, body {
 body {
     background-color: #3D3D3D;
     background-image: url("../images/back.jpg");
-    background-position: left top;
+    background-position: center top;
     background-repeat: no-repeat;
     font-family: "pokegb",Helvetica,Arial,sans-serif;
     font-size: 18px;
     height: auto;
-    margin-left: 270px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     width: 960px;
 }
@@ -44,10 +45,13 @@ body {
 #tableau {
     background: none repeat scroll 0 0 #D3D3D3;
     width: 960px;
+    position: relative;
+    top:-255px;
 }
 #recherche {
-    height: auto;
+    height: 120px;
     display:block;
+    color:white;
 }
 .recherche {
     color: #FFFFFF;
@@ -68,18 +72,23 @@ div#avatar {
 	background-repeat: no-repeat;
 	width: 150px;
 	height: 180px;
-	position:absolute;
-	left:295px;
-	top:241px;
+	position:relative;
+	left:50px;
+	top:-180px;
+	z-index:-1;
 }
 div#bulle {
 	background-image: url(../images/bulle_base.jpg);
 	background-repeat: no-repeat;
 	width: 253px;
 	height: 72px;
-	position:absolute;
-	left:427px;
-	top:336px;
+	position:relative;
+	left:210px;
+	top:-280px;
+	z-index:-1;
+}
+div#fond_recherche {
+	background-color:grey;
 }
 h1 {
     font-size: 2.6em;

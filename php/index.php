@@ -30,7 +30,11 @@
 						<input type='checkbox' value='true' id='check_legend' name='check_legend' 
 						<?php if(isset($_POST['check_legend']) && $_POST['check_legend']=="true")
 						{ echo "checked=\"checked\"";} ?>/>
-						restreindre aux légendaires
+						restreindre aux légendaires</br>
+						<input type='checkbox' value='true' id='check_csv' name='check_csv' 
+						<?php if(isset($_POST['check_csv']) && $_POST['check_csv']=="true")
+						{ echo "checked=\"checked\"";} ?>/>
+						télécharger au format .csv
 					</div>
 				</div>
 				
@@ -62,6 +66,7 @@
             	</tbody>
 			</table>
 		</div>
+		<?php include("csv.php"); ?>
         <?php include("close.php"); ?>
 	</body>
 </html>

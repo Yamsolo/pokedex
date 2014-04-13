@@ -2,4 +2,5 @@
 	$connect = "";
 	$login = "";
 	$password = "";
+	$database = "";
 ?>

@@ -19,7 +19,7 @@
 	if ($count_where == 0)
 		$where = "";
 	
-	$query = mysql_query("SELECT DISTINCT idNumero, Nom, Niveau, Espece, GROUP_CONCAT(`PokeType`) AS Type, Taille, Poids, Legendaire, AttaqueSpe, PV
+	$query = mysql_query("SELECT DISTINCT idNumero, Nom, Niveau, Espece, GROUP_CONCAT(`PokeType` SEPARATOR ' ') AS Type, Taille, Poids, Legendaire, AttaqueSpe, PV
 						FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes
 						GROUP BY idNumero");
 	

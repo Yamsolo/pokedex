@@ -6,4 +6,4 @@ Ceci n'est pas vraiment un pokédex. C'est un PC de Léo, demandé en cours de B
 TODO
 ====
 
-Les 'issues' décrivent une bonne partie des amélioration encore nécessaires au projet. Pensez à les regarder en premier.
+Les 'issues' décrivent une bonne partie des améliorations encore nécessaires au projet. Pensez à les regarder en premier.

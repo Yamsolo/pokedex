@@ -19,14 +19,17 @@
 				<div id="bloc_texte">
 					<p class="recherche">Rechercher un pokémon</p>
 					
-						<input class="barre" name="name" type="text" placeholder="nom du pokémon" /></br>
-						
+						<input class="barre" name="name" type="text" placeholder="nom du pokemon" 
+						<?php if(isset($_POST['name']))
+						{ echo "value=\"".$_POST['name']."\"";} ?> /></br>
 				</div>
 				
 				<div id="bloc_check">
 					<p class="recherche">Options</p>
 					<div>
-						<input type='checkbox' value='true' id='check_legend' name='check_legend' />
+						<input type='checkbox' value='true' id='check_legend' name='check_legend' 
+						<?php if(isset($_POST['check_legend']) && $_POST['check_legend']=="true")
+						{ echo "checked=\"checked\"";} ?>/>
 						restreindre aux légendaires
 					</div>
 				</div>

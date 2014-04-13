@@ -29,6 +29,8 @@
 	while($tab = mysql_fetch_assoc($query))
 	{
 		$tab['Legendaire'] = ($tab['Legendaire'] == 1) ? "oui" : "non";
+		$tab['Taille'] .= " m";
+		$tab['Poids'] .= " kg";
 		echo "<tr class='ligne'>
 				<td>".$tab['Nom']."</td>
 				<td>".$tab['Niveau']."</td>

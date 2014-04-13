@@ -12,7 +12,7 @@
 				<h1 class="recherche"><a href="<?php echo $_SERVER['php_self'] ?>">PC de Léo</a></h1>
 			</div>
 			<div id="fond_recherche"></div>
-			<form id="search" method="post" action="">
+			<form id="search" method="post" action="<?php echo $_SERVER['php_self'] ?>">
 			<div id="recherche">
 				
 				
@@ -26,8 +26,7 @@
 				<div id="bloc_check">
 					<p class="recherche">Options</p>
 					<div>
-						<input type="checkbox" value="true" id="check_legend" name="check_legend" />
-						<label for="squaredThree"></label>
+						<input type='checkbox' value='true' id='check_legend' name='check_legend' />
 						restreindre aux légendaires
 					</div>
 				</div>

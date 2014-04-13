@@ -2,25 +2,28 @@
 	mysql_select_db($database, $link) or die("Impossible de selectionner la base de donnée");
 	mysql_set_charset("utf8", $link);
 	$where = "WHERE ";
-	$count_where = 0;
-	if (isset($_POST['name']))
+	$cpt = 0;
+	if (isset($_POST['name']) && ($_POST['name'] != ''))
 		{
-			$where += "Surnom='".$_POST['name']."'";
-			$count_where++;
+			$where .= "Nom='".$_POST['name']."'";
+			$cpt++;
 		}
 	if (isset($_POST['type']))
 		{
-			$where += ($count_where == 0) ? "Type='".$_POST['type']."'" : " AND Type='".$_POST['type']."'";
+			$where .= ($cpt == 0) ? "Type='".$_POST['type']."'" : " AND Type='".$_POST['type']."'";
+			$cpt++;
 		}
 	if (isset($_POST['check_legend']) && ($_POST['check_legend'] == true))
 		{
-			$where += ($count_where == 0) ? "Legendaire=1" : " AND Legendaire=1";
+			$where .= ($cpt == 0) ? "Legendaire=1" : " AND Legendaire=1";
+			$cpt++;
 		}
-	if ($count_where == 0)
+	if ($cpt == 0)
 		$where = "";
 	
 	$query = mysql_query("SELECT DISTINCT idNumero, Nom, Niveau, Espece, GROUP_CONCAT(`PokeType` SEPARATOR ' ') AS Type, Taille, Poids, Legendaire, AttaqueSpe, PV
 						FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes
+						".$where."
 						GROUP BY idNumero");
 	
 	while($tab = mysql_fetch_assoc($query))

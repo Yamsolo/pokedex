@@ -67,6 +67,11 @@
 			</table>
 		</div>
 		<?php include("csv.php"); ?>
-        <?php include("close.php"); ?>
+        <?php include("close.php"); 
+        if($nombre_de_pokemon > 0)
+		$moyenne_poids = $poids_total / $nombre_de_pokemon;
+	echo "<div id='stats>";
+		echo "<p>nombre de poids : $nombre_de_poids Pokemon avec le plus de PV : $pv Poids total : $poids_total moyenne poids : $moyenne_poids</p>";		
+	echo "</div>"; ?>
 	</body>
 </html>

@@ -1,4 +1,9 @@
 <?php
+	$nombre_de_pokemon = 0;
+	$plus_de_pv = 0;
+	$nombre_de_legendaire = 0;
+	$poids_total = 0;
+	$moyenne_poids = 0;
 	mysql_select_db($database, $link) or die("Impossible de selectionner la base de donnée");
 	mysql_set_charset("utf8", $link);
 	$where = "WHERE ";
@@ -42,5 +47,9 @@
 				<td>".$tab['AttaqueSpe']."</td>
 				<td>".$tab['PV']."</td>
 			</tr>";
+		$nombre_de_pokemon++;
+		if ($plus_de_pv < $tab['PV'])
+			$plus_de_pv = $tab['PV'];
+		$poids_total = $poids_total + $tab['Poids'];
 	}
 ?>

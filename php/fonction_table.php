@@ -41,4 +41,8 @@ function delete_pokemon($id)
 	$request = "DELETE FROM Pokemon WHERE idNumero = $id";
 	mysql_query($request) or die("Erreur lors de la supression du Pokemon");
 }
+
+mysql_free_result($query);
+mysql_close($link);
+
 ?>

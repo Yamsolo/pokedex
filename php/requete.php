@@ -47,7 +47,8 @@
 				<td>".$tab['Legendaire']."</td>
 				<td>".$tab['AttaqueSpe']."</td>
 				<td>".$tab['PV']."</td>
-				<td><a><input class=\"bouton\" type=\"submit\" value=\"X\" /></a>
+				<td><input class=\"bouton\" type=\"submit\" value=\"X\" 
+					/>
 				</td>
 			</tr>";
 		$nombre_de_pokemon++;

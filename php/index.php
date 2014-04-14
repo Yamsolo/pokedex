@@ -48,7 +48,7 @@
 				<thead>
 					<tr class="ligne">
 					<th>Nom</th>
-						<th>Niveau</th>
+					<th>Niveau</th>
 					<th>Espèce</th>
 					<th>Types</th>
 					<th>Taille</th>
@@ -56,10 +56,24 @@
 					<th>Légendaire</th>
 					<th>Attaque signature</th>
 					<th>PV</th>
+					<th>Supprimer</th>
 					</tr>
 				</thead>
             	<tbody>
 				  <?php include("requete.php"); ?>
+			<!--<form method="post" action="ajout_pokemon.php">
+				<tr class='ligne'>
+					<td><input type="text" name="Nom" placeholder="Nom du Pokémon"/></td>
+					<td><input type="text" name="Niveau" placeholder="Nom du Pokémon"/></td>
+					<td><input type="text" name="Espece" placeholder="Nom du Pokémon"/></td>
+					<td><input type="text" name="Types" placeholder="Nom du Pokémon"/></td>
+					<td><input type="text" name="Taille" placeholder="Nom du Pokémon"/></td>
+					<td><input type="text" name="Poids" placeholder="Nom du Pokémon"/></td>
+					<td><input type="checkbox"name="Légendaire" placeholder="Nom du Pokémon"/></td>
+					<td><input type="text" name="Attaque signature" placeholder="Nom du Pokémon"/></td>
+					<td><input type="submit" value="Envoyer"/></td>
+				</tr>
+			</form> -->
             	</tbody>
 			</table>
 			<?php include("close.php");

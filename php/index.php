@@ -31,10 +31,7 @@
 						<?php if(isset($_POST['check_legend']) && $_POST['check_legend']=="true")
 						{ echo "checked=\"checked\"";} ?>/>
 						restreindre aux légendaires</br>
-						<input type='checkbox' value='true' id='check_csv' name='check_csv' 
-						<?php if(isset($_POST['check_csv']) && $_POST['check_csv']=="true")
-						{ echo "checked=\"checked\"";} ?>/>
-						télécharger au format .csv
+						<input class="bouton" type="submit" value="télécharger .csv" />
 					</div>
 				</div>
 				
@@ -59,19 +56,24 @@
 					<th>Légendaire</th>
 					<th>Attaque signature</th>
 					<th>PV</th>
-				</tr>
+					</tr>
 				</thead>
             	<tbody>
 				  <?php include("requete.php"); ?>
             	</tbody>
 			</table>
+			<?php include("close.php");
+	        if($nombre_de_pokemon > 0)
+				$moyenne_poids = $poids_total / $nombre_de_pokemon;
+			echo "<div id='stats'>";
+			echo "<h3>Statistiques pour cette recherche:</h3>
+				Nombre de pokémons : $nombre_de_pokemon </br>
+				Pokémon avec le plus de PV : </br> $plus_name ($plus_de_pv PV)</br>
+				Poids total : $poids_total kg</br>
+				Moyenne des poids : $moyenne_poids kg
+				";
+			echo "</div>";
+			?>
 		</div>
-		<?php include("csv.php"); ?>
-        <?php include("close.php"); 
-        if($nombre_de_pokemon > 0)
-		$moyenne_poids = $poids_total / $nombre_de_pokemon;
-	echo "<div id='stats>";
-		echo "<p>nombre de poids : $nombre_de_poids Pokemon avec le plus de PV : $pv Poids total : $poids_total moyenne poids : $moyenne_poids</p>";		
-	echo "</div>"; ?>
 	</body>
 </html>

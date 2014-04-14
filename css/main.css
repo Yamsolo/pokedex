@@ -30,20 +30,13 @@ body {
     text-align: center;
     width: 960px;
 }
-#main {
-    color: #888888;
-    font-family: "pokegb",Helvetica,Arial,sans-serif;
-    font-size: 14px;
-    margin: 4em auto;
-    padding: 3em;
-    text-align: center;
-    width: 80%;
-}
 #header {
     height: 390px;
 }
 #tableau {
     background: none repeat scroll 0 0 #D3D3D3;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0 0 15px 2px;
     width: 960px;
     position: relative;
     top:-255px;
@@ -52,6 +45,30 @@ body {
     height: 120px;
     display:block;
     color:white;
+}
+#stats {
+	background: none repeat scroll 0 0 #D3D3D3;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0 0 15px 2px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#stats {
+	background: none repeat scroll 0 0 #D3D3D3;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0 0 15px 2px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#csv {
+	background: none repeat scroll 0 0 #D3D3D3;
+    border-radius:10px 10px 10px 10px;
+    box-shadow:0 0 15px 2px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .recherche {
     color: #FFFFFF;
@@ -97,9 +114,7 @@ h2 {
     font-size: 1.4em;
 }
 h3 {
-    color: #999999;
-    font-size: 1.1em;
-    margin: 1em 0 0 1.6em;
+    font-size: 0.9em;
 }
 a {
     color: #F0F0F0;

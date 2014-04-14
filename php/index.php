@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>PC de Léo</title>
-        	<link rel=stylesheet href="../css/main.css" type="text/css">
-		<meta charset="utf-8"/>
-	</head>
-	<body>
+	<?php include("header.php") ?>
 	  <?php include("connexion.php") ?>
 		<div id="header">
 			<div id="titre">
@@ -14,14 +7,14 @@
 			<div id="fond_recherche"></div>
 			<form id="search" method="post" action="<?php echo $_SERVER['php_self'] ?>">
 			<div id="recherche">
-				
-				
+								
 				<div id="bloc_texte">
 					<p class="recherche">Rechercher un pokémon</p>
 					
-						<input class="barre" name="name" type="text" placeholder="nom du pokemon" 
-						<?php if(isset($_POST['name']))
-						{ echo "value=\"".$_POST['name']."\"";} ?> /></br>
+					<input class="barre" name="name" type="text" placeholder="nom du pokemon" 
+					<?php if(isset($_POST['name']))
+					{ echo "value=\"".$_POST['name']."\"";} ?> /></br>
+					<?php include("select_type.php"); ?>
 				</div>
 				
 				<div id="bloc_check">
@@ -31,6 +24,11 @@
 						<?php if(isset($_POST['check_legend']) && $_POST['check_legend']=="true")
 						{ echo "checked=\"checked\"";} ?>/>
 						restreindre aux légendaires</br>
+						<select name='select_order'>
+							<option value="select_alpha" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_alpha")){ echo "selected";} ?>>trier par ordre alphabétique</option>
+							<option value="select_pv" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_pv")){ echo "selected";} ?>>trier par ordre de pv</option>
+							<option value="select_poids" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_poids")){ echo "selected";} ?>>trier par ordre de poids</option>
+						</select></br>
 						<input class="bouton" type="submit" value="télécharger .csv" />
 					</div>
 				</div>

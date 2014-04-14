@@ -8,6 +8,7 @@
 	mysql_select_db($database, $link) or die("Impossible de selectionner la base de donnée");
 	mysql_set_charset("utf8", $link);
 	$where = "WHERE ";
+	$asc = "";
 	$cpt = 0;
 	if (isset($_POST['name']) && ($_POST['name'] != ''))
 		{
@@ -26,11 +27,25 @@
 		}
 	if ($cpt == 0)
 		$where = "";
+		
+	if (isset($_POST['select_order']) && ($_POST['select_order'] == "select_alpha"))
+		{
+			$asc .= "ORDER BY Nom ASC";
+		}
+	if (isset($_POST['select_order']) && ($_POST['select_order'] == "select_pv"))
+		{
+			$asc .= "ORDER BY PV ASC";
+		}
+	if (isset($_POST['select_order']) && ($_POST['select_order'] == "select_poids"))
+		{
+			$asc .= "ORDER BY Poids ASC";
+		}
 	
 	$query = mysql_query("SELECT DISTINCT idNumero, Nom, Niveau, Espece, GROUP_CONCAT(`PokeType` SEPARATOR ' ') AS Type, Taille, Poids, Legendaire, AttaqueSpe, PV
 						FROM Pokemon NATURAL JOIN TypesPokemon NATURAL JOIN Types NATURAL JOIN Pokedex NATURAL JOIN Especes
 						".$where."
-						GROUP BY idNumero");
+						GROUP BY idNumero
+						".$asc."");
 	
 	while($tab = mysql_fetch_assoc($query))
 	{

@@ -13,9 +13,9 @@
 			$where .= "Nom='".$_POST['name']."'";
 			$cpt++;
 		}
-	if (isset($_POST['type']))
+	if (isset($_POST['poketype']) && ($_POST['poketype'] != ''))
 		{
-			$where .= ($cpt == 0) ? "Type='".$_POST['type']."'" : " AND Type='".$_POST['type']."'";
+			$where .= ($cpt == 0) ? "PokeType='".$_POST['poketype']."'" : " AND PokeType='".$_POST['poketype']."'";
 			$cpt++;
 		}
 	if (isset($_POST['check_legend']) && ($_POST['check_legend'] == true))

@@ -14,7 +14,9 @@
 					<input class="barre" name="name" type="text" placeholder="nom du pokemon" 
 					<?php if(isset($_POST['name']))
 					{ echo "value=\"".$_POST['name']."\"";} ?> /></br>
-					<?php include("select_type.php"); ?>
+					<input class="barre" name="poketype" type="text" placeholder="type du pokemon" 
+					<?php if(isset($_POST['poketype']))
+					{ echo "value=\"".$_POST['poketype']."\"";} ?> /></br>
 				</div>
 				
 				<div id="bloc_check">
@@ -25,6 +27,7 @@
 						{ echo "checked=\"checked\"";} ?>/>
 						restreindre aux légendaires</br>
 						<select name='select_order'>
+							<option>options de tri</option>
 							<option value="select_alpha" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_alpha")){ echo "selected";} ?>>trier par ordre alphabétique</option>
 							<option value="select_pv" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_pv")){ echo "selected";} ?>>trier par ordre de pv</option>
 							<option value="select_poids" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_poids")){ echo "selected";} ?>>trier par ordre de poids</option>
@@ -54,24 +57,24 @@
 					<th>Légendaire</th>
 					<th>Attaque signature</th>
 					<th>PV</th>
-					<th>Supprimer</th>
 					</tr>
 				</thead>
             	<tbody>
 				  <?php include("requete.php"); ?>
-			<!--<form method="post" action="ajout_pokemon.php">
+			<form method="post" action="ajout_pokemon.php">
 				<tr class='ligne'>
-					<td><input type="text" name="Nom" placeholder="Nom du Pokémon"/></td>
-					<td><input type="text" name="Niveau" placeholder="Nom du Pokémon"/></td>
-					<td><input type="text" name="Espece" placeholder="Nom du Pokémon"/></td>
-					<td><input type="text" name="Types" placeholder="Nom du Pokémon"/></td>
-					<td><input type="text" name="Taille" placeholder="Nom du Pokémon"/></td>
-					<td><input type="text" name="Poids" placeholder="Nom du Pokémon"/></td>
-					<td><input type="checkbox"name="Légendaire" placeholder="Nom du Pokémon"/></td>
-					<td><input type="text" name="Attaque signature" placeholder="Nom du Pokémon"/></td>
-					<td><input type="submit" value="Envoyer"/></td>
+					<td><input class="champ" type="text" name="Nom" placeholder="Nom"/></td>
+					<td><input class="nombre" type="text" name="Niveau" placeholder="Lv"/></td>
+					<td><input class="champ" type="text" name="Espece" placeholder="Espèce"/></td>
+					<td><input class="champ" type="text" name="Types" placeholder="type1,type2"/></td>
+					<td><input class="nombre" type="text" name="Taille" placeholder="Taille"/></td>
+					<td><input class="nombre" type="text" name="Poids" placeholder="Poids"/></td>
+					<td><input type="checkbox"name="Legendaire"/></td>
+					<td><input class="champ" type="text" name="AS" placeholder="Attaque signature"/></td>
+					<td><input class="nombre" type="text" name="PV" placeholder="Pv"/></td>
+					<td><input type="submit" value="Ajouter"/></td>
 				</tr>
-			</form> -->
+			</form>
             	</tbody>
 			</table>
 			<?php include("close.php");

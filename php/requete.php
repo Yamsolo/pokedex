@@ -47,9 +47,7 @@
 				<td>".$tab['Legendaire']."</td>
 				<td>".$tab['AttaqueSpe']."</td>
 				<td>".$tab['PV']."</td>
-				<td><input class=\"bouton\" type=\"submit\" value=\"X\" 
-					/>
-				</td>
+				<td><a href=delete.php?id=".$tab['idNumero']."><input class=\"bouton\" type=\"submit\" value=\"X\" /></a></td>
 			</tr>";
 		$nombre_de_pokemon++;
 		if ($plus_de_pv < $tab['PV']){

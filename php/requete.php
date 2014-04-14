@@ -5,8 +5,6 @@
 	$nombre_de_legendaire = 0;
 	$poids_total = 0;
 	$moyenne_poids = 0;
-	mysql_select_db($database, $link) or die("Impossible de selectionner la base de donnée");
-	mysql_set_charset("utf8", $link);
 	$where = "WHERE ";
 	$asc = "";
 	$cpt = 0;

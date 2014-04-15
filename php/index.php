@@ -32,7 +32,6 @@
 							<option value="select_pv" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_pv")){ echo "selected";} ?>>trier par ordre de pv</option>
 							<option value="select_poids" <?php if(isset($_POST['select_order']) && ($_POST['select_order'] =="select_poids")){ echo "selected";} ?>>trier par ordre de poids</option>
 						</select></br>
-						<input class="bouton" type="submit" value="télécharger .csv" />
 					</div>
 				</div>
 				
@@ -64,14 +63,14 @@
 			<form method="post" action="ajout_pokemon.php">
 				<tr class='ligne'>
 					<td><input class="champ" type="text" name="Nom" placeholder="Nom"/></td>
-					<td><input class="nombre" type="text" name="Niveau" placeholder="Lv"/></td>
+					<td><input class="nombre" type="number" name="Niveau" placeholder="Lv"/></td>
 					<td><input class="champ" type="text" name="Espece" placeholder="Espèce"/></td>
 					<td><input class="champ" type="text" name="Types" placeholder="type1,type2"/></td>
-					<td><input class="nombre" type="text" name="Taille" placeholder="Taille"/></td>
-					<td><input class="nombre" type="text" name="Poids" placeholder="Poids"/></td>
+					<td><input class="nombre" type="number" name="Taille" placeholder="Taille"/></td>
+					<td><input class="nombre" type="number" name="Poids" placeholder="Poids"/></td>
 					<td><input type="checkbox"name="Legendaire"/></td>
 					<td><input class="champ" type="text" name="AS" placeholder="Attaque signature"/></td>
-					<td><input class="nombre" type="text" name="PV" placeholder="Pv"/></td>
+					<td><input class="nombre" type="number" name="PV" placeholder="Pv"/></td>
 					<td><input type="submit" value="Ajouter"/></td>
 				</tr>
 			</form>

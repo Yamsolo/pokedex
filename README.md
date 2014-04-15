@@ -10,8 +10,3 @@ Les 'issues' décrivent une bonne partie des améliorations encore nécessaires 
 
 * Ajout/Suppression d'un pokémon dans la BD.
 * Select dynamique.
-* Calcul de stats:
-  * nb pokémon
-  * le + de PV
-  * nb de légendaire
-  * poids total

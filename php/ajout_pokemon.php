@@ -30,7 +30,7 @@
 		header("Location: index.php");
 	$niveau = $_POST['Niveau'];
 	$espece = $_POST['Espece'];
-	$type = str_split($_POST['Types']);
+	$type = ($_POST['Types']);
 	$legendaire = $_POST['Legendaire'];
 	if (!$legendaire)
 		$legendaire = 0;

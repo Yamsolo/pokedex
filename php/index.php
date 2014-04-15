@@ -1,5 +1,6 @@
-	<?php include("header.php") ?>
-	  <?php include("connexion.php") ?>
+	<?php include("header.php"); // On inclut les header classiques?>
+	  <?php include("connexion.php") // On débute les connexions?>
+		<!-- DEBUT DU HEADER -->
 		<div id="header">
 			<div id="titre">
 				<h1 class="recherche"><a href="<?php echo $_SERVER['php_self'] ?>">PC de Léo</a></h1>
@@ -7,7 +8,7 @@
 			<div id="fond_recherche"></div>
 			<form id="search" method="post" action="<?php echo $_SERVER['php_self'] ?>">
 			<div id="recherche">
-								
+				<!-- BLOC DE GAUCHE -->				
 				<div id="bloc_texte">
 					<p class="recherche">Rechercher un pokémon</p>
 					
@@ -18,7 +19,7 @@
 					<?php if(isset($_POST['poketype']))
 					{ echo "value=\"".$_POST['poketype']."\"";} ?> /></br>
 				</div>
-				
+				<!-- BLOC DE DROITE -->
 				<div id="bloc_check">
 					<p class="recherche">Options</p>
 					<div>
@@ -34,18 +35,19 @@
 						</select></br>
 					</div>
 				</div>
-				
-				
 			</div>
 			<input class="bouton" type="submit" value="rechercher" />
 			</form>
-			
 		</div>
+		
+		<!-- DEBUT DU CONTENU -->
 		<div id="content">
 			<div id="avatar"></div>
 			<div id="bulle"></div>
+			
 			<table id="tableau">
-				<thead>
+				<!-- 1ère ligne, avec les titres -->
+				<thead> 
 					<tr class="ligne">
 					<th>Nom</th>
 					<th>Niveau</th>
@@ -58,35 +60,44 @@
 					<th>PV</th>
 					</tr>
 				</thead>
-            	<tbody>
-				  <?php include("requete.php"); ?>
-			<form method="post" action="ajout_pokemon.php">
-				<tr class='ligne'>
-					<td><input class="champ" type="text" name="Nom" placeholder="Nom"/></td>
-					<td><input class="nombre" type="number" name="Niveau" placeholder="Lv"/></td>
-					<td><input class="champ" type="text" name="Espece" placeholder="Espèce"/></td>
-					<td><input class="champ" type="text" name="Types" placeholder="type1,type2"/></td>
-					<td><input class="nombre" type="number" name="Taille" placeholder="Taille"/></td>
-					<td><input class="nombre" type="number" name="Poids" placeholder="Poids"/></td>
-					<td><input type="checkbox"name="Legendaire"/></td>
-					<td><input class="champ" type="text" name="AS" placeholder="Attaque signature"/></td>
-					<td><input class="nombre" type="number" name="PV" placeholder="Pv"/></td>
-					<td><input type="submit" value="Ajouter"/></td>
-				</tr>
-			</form>
+				
+            	<tbody> 
+            	<!-- Lignes des pokémons affichés -->
+				<?php include("requete.php"); ?>
+				
+				<!-- Ligne d'ajout d'un pokémon -->
+				<form method="post" action="ajout_pokemon.php">
+					<tr class='ligne'>
+						<td><input class="champ" type="text" name="Nom" placeholder="Nom" required/></td>
+						<td><input class="nombre" type="number" name="Niveau" placeholder="Lv" required/></td>
+						<td><input class="champ" type="text" name="Espece" placeholder="Espèce" required/></td>
+						<td><input class="champ" type="text" name="Types" placeholder="type1,type2" required/></td>
+						<td><input class="nombre" type="number" name="Taille" placeholder="Taille" required/></td>
+						<td><input class="nombre" type="number" name="Poids" placeholder="Poids" required/></td>
+						<td><input type="checkbox"name="Legendaire"/></td>
+						<td><input class="champ" type="text" name="AS" placeholder="Attaque signature" required/></td>
+						<td><input class="nombre" type="number" name="PV" placeholder="Pv" required/></td>
+						<td><input type="submit" value="Ajouter" required/></td>
+					</tr>
+				</form>
             	</tbody>
 			</table>
-			<?php include("close.php");
-	        if($nombre_de_pokemon > 0)
-				$moyenne_poids = $poids_total / $nombre_de_pokemon;
-			echo "<div id='stats'>";
-			echo "<h3>Statistiques pour cette recherche:</h3>
-				Nombre de pokémons : $nombre_de_pokemon </br>
-				Pokémon avec le plus de PV : </br> $plus_name ($plus_de_pv PV)</br>
-				Poids total : $poids_total kg</br>
-				Moyenne des poids : $moyenne_poids kg
-				";
-			echo "</div>";
+			
+			<!-- Partie statistiqes -->
+			<?php 
+				// fermeture des requêtes.
+				include("close.php");
+				// affichage des statistiques avec les variables non-purgées
+		        if($nombre_de_pokemon > 0)
+					$moyenne_poids = $poids_total / $nombre_de_pokemon;
+				echo "<div id='stats'>";
+				echo "<h3>Statistiques pour cette recherche:</h3>
+					Nombre de pokémons : $nombre_de_pokemon </br>
+					Pokémon avec le plus de PV : </br> $plus_name ($plus_de_pv PV)</br>
+					Poids total : $poids_total kg</br>
+					Moyenne des poids : $moyenne_poids kg
+					";
+				echo "</div>";
 			?>
 		</div>
 	</body>
